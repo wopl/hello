@@ -1,0 +1,56 @@
+---
+################################################################################
+##                                                                            ##
+## file: build_docker.yml                      (c) Wolfram Plettscher 11/2020 ##
+##                                                                            ##
+################################################################################
+
+- name: build docker
+  hosts: host_local
+
+  ##############################################################################
+  vars_files:
+  - vars/common.yml
+  - vars/secret.yml
+
+  tasks:
+    # on MacBook docker needs to be started via GUI ... no shell cmd found yet
+    ### start docker service ###################################################
+#   - name: start docker service
+##     command: service docker start
+#     service:
+#       name: docker
+#       state: started
+#     become: true
+
+    ### build docker container #################################################
+    ### we need to switch to .. to provide the right docker build context
+    - name: build docker container
+      command: docker build -t {{ ms_hello }} -f ./ansible/Dockerfile .
+      args:
+        chdir: ..
+
+    ### ??? better use command or docker_image ??? #############################
+#   - name: Build an image and push it to a private repo
+#     docker_image:
+#       build:
+#         path: ./sinatra
+#       name: registry.ansible.com/chouseknecht/sinatra
+#       tag: v1
+#       push: yes
+#       source: build
+
+    ### login to docker repository #############################################
+    - name: login docker repository
+      command: docker login -u="woppl" -p="{{ docker.password }}"
+
+    ### push container to dockerhub ############################################
+    - name: transfer docker container to dockerhub
+      command: docker push {{ ms_hello }}
+ 
+    ### docker logout ##########################################################
+    - name: logout from docker repository
+      command: docker logout
+
+  ##############################################################################
+  # handlers:

@@ -1,0 +1,9 @@
+################################################################################
+##                                                                            ##
+## file: runbuilddocker                        (c) Wolfram Plettscher 11/2020 ##
+##                                                                            ##
+################################################################################
+
+yarn encore production
+ansible-playbook -i ./ansible/vars/hosts.yml --vault-password-file ../../ansible_vault.key --ask-become-pass ./ansible/build_docker.yml
+
