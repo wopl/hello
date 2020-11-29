@@ -1,0 +1,82 @@
+id:
+  providerName: admin
+  apiName: hello
+  version: "0.1"
+  id: 0
+uuid: 1a2f7515-ce3a-43dd-b614-e71cc84320e2
+type: HTTP
+context: /m2m/0.1
+contextTemplate: /m2m/{version}
+tags: []
+documents: []
+lastUpdated: Nov 25, 2020, 12:37:23 PM
+availableTiers:
+ -
+  name: Unlimited
+  displayName: Unlimited
+  description: Allows unlimited requests
+  requestsPerMin: 2147483647
+  requestCount: 2147483647
+  unitTime: 0
+  timeUnit: ms
+  tierPlan: FREE
+  stopOnQuotaReached: true
+availableSubscriptionLevelPolicies: []
+uriTemplates: []
+apiHeaderChanged: false
+apiResourcePatternsChanged: false
+status: PROTOTYPED
+visibility: public
+gatewayLabels: []
+endpointSecured: false
+endpointAuthDigest: false
+transports: http,https
+advertiseOnly: false
+subscriptionAvailability: current_tenant
+corsConfiguration:
+  corsConfigurationEnabled: false
+  accessControlAllowOrigins:
+   - '*'
+  accessControlAllowCredentials: false
+  accessControlAllowHeaders:
+   - authorization
+   - Access-Control-Allow-Origin
+   - Content-Type
+   - SOAPAction
+   - apikey
+   - testKey
+  accessControlAllowMethods:
+   - GET
+   - PUT
+   - POST
+   - DELETE
+   - PATCH
+   - OPTIONS
+endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http:\/\/m2m.tsys.koeln\/"},"production_endpoints":{"url":"http:\/\/m2m.tsys.koeln\/"}}'
+responseCache: Disabled
+cacheTimeout: 300
+implementation: ENDPOINT
+authorizationHeader: Authorization
+scopes: []
+isDefaultVersion: false
+isPublishedDefaultVersion: false
+keyManagers:
+ - all
+environments:
+ - Production and Sandbox
+createdTime: "1606241565985"
+additionalProperties: {}
+monetizationProperties: {}
+isMonetizationEnabled: false
+environmentList:
+ - SANDBOX
+ - PRODUCTION
+apiSecurity: oauth_basic_auth_api_key_mandatory,api_key
+endpoints: []
+enableSchemaValidation: false
+apiCategories: []
+enableStore: false
+testKey: 0e2df410-f758-43e1-8c99-5704763384cd
+accessControl: all
+rating: 0.0
+isLatest: true

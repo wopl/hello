@@ -1,0 +1,82 @@
+openapi: 3.0.1
+info:
+  title: hello
+  version: "0.1"
+servers:
+ -
+  url: /
+security:
+ -
+  default: []
+paths:
+  /*:
+    get:
+      responses:
+        "200":
+          description: OK
+      security:
+       -
+        default: []
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+      x-wso2-application-security:
+        security-types:
+         - api_key
+        optional: false
+  /hello:
+    get:
+      responses:
+        "200":
+          description: OK
+      security:
+       -
+        default: []
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+      x-wso2-application-security:
+        security-types:
+         - api_key
+        optional: false
+components:
+  securitySchemes:
+    default:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: ""
+          scopes: {}
+x-wso2-auth-header: Authorization
+x-wso2-cors:
+  corsConfigurationEnabled: false
+  accessControlAllowOrigins:
+   - '*'
+  accessControlAllowCredentials: false
+  accessControlAllowHeaders:
+   - authorization
+   - Access-Control-Allow-Origin
+   - Content-Type
+   - SOAPAction
+   - apikey
+   - testKey
+  accessControlAllowMethods:
+   - GET
+   - PUT
+   - POST
+   - DELETE
+   - PATCH
+   - OPTIONS
+x-wso2-production-endpoints:
+  urls:
+   - http://m2m.tsys.koeln/
+  type: http
+x-wso2-sandbox-endpoints:
+  urls:
+   - http://m2m.tsys.koeln/
+  type: http
+x-wso2-basePath: /m2m/0.1
+x-wso2-transports:
+ - http
+ - https
+x-wso2-response-cache:
+  enabled: false
+  cacheTimeoutInSeconds: 300
