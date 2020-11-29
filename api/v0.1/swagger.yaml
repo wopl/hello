@@ -1,6 +1,7 @@
 openapi: 3.0.1
 info:
-  title: hello
+  title: m2m
+  description: API for M2M tests
   version: "0.1"
 servers:
  -
@@ -65,18 +66,9 @@ x-wso2-cors:
    - DELETE
    - PATCH
    - OPTIONS
-x-wso2-production-endpoints:
-  urls:
-   - http://m2m.tsys.koeln/
-  type: http
-x-wso2-sandbox-endpoints:
-  urls:
-   - http://m2m.tsys.koeln/
-  type: http
 x-wso2-basePath: /m2m/0.1
 x-wso2-transports:
  - http
- - https
 x-wso2-response-cache:
   enabled: false
   cacheTimeoutInSeconds: 300
