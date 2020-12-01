@@ -127,7 +127,7 @@ class HelloController extends AbstractController
 
     } else {
 
-    $lastname = $indata['person']['lastname'];
+    $lastname = $indata['arg0']['lastname'];
     $outdata ['family']['size'] = 5;
 
     $outdata ['family']['members'][0]['firstname'] = 'Harry';
