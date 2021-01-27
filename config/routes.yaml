@@ -6,6 +6,10 @@ hello:
   path: /hello
   controller: App\Controller\HelloController::hello
 
+gui:
+  path: /gui
+  controller: App\Controller\HelloController::gui
+
 #tom:
 #  path: /tom
 #  controller: App\Controller\HelloController::tom

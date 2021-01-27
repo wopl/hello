@@ -33,9 +33,40 @@ class HelloController extends AbstractController
   {
     $data = [
       'message' => "This is the root path to Wolframs Hello Microservice",
+      'String' => "This is the root path to Wolframs Hello Microservice",
     ];
     return new JsonResponse ($data, Response::HTTP_OK);
 
+  }
+
+  // ********************************************************************************
+  // **                                                                            **
+  // ** function: hello2                                                           **
+  // **                                                                            **
+  // ********************************************************************************
+  /** 
+   * @Route ("/hello2", name="hello2", methods={"POST"})
+   */
+  public function hello2(): Response
+  {
+    $data = [
+      'String' => "This is method hello2 of M2M Hello Microservice",
+    ];
+    return new JsonResponse ($data, Response::HTTP_OK);
+
+  }
+
+  // ********************************************************************************
+  // **                                                                            **
+  // ** function: gui                                                              **
+  // **                                                                            **
+  // ********************************************************************************
+  /** 
+   * @Route ("/gui", name="gui", methods={"GET"})
+   */
+  public function gui(): Response
+  {
+    return $this->render ('guimain.html.twig');
   }
 
   // ********************************************************************************

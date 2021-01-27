@@ -34,7 +34,7 @@ RUN apt-get update \
 ADD --chown=www-data bin bin
 ADD --chown=www-data config config
 ADD --chown=www-data vendor vendor
-#ADD --chown=www-data templates templates
+ADD --chown=www-data templates templates
 ADD --chown=www-data src src
 ADD --chown=www-data composer.json composer.json
 #ADD --chown=www-data getParameter getParameter
