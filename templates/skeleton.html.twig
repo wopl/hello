@@ -1,0 +1,180 @@
+{##################################################################################}
+{##                                                                              ##}
+{## skeleton.html.twig                            (c) Wolfram Plettscher 01/2021 ##}
+{##                                                                              ##}
+{##################################################################################}
+
+<!DOCTYPE html>
+<html>
+  {################################################################################}
+  {#                                                                              #}
+  {# head                                                                         #}
+  {#                                                                              #}
+  {################################################################################}
+  <head>
+    {% block head %}
+      <meta charset="UTF-8" />
+      <title>{% block title %}WP Tools{% endblock %}</title>
+
+      {############################################################################}
+      {# stylesheets                                                              #}
+      {############################################################################}
+      {% block stylesheets %}
+        {# Font Adobe Geramond 'cwK5ymc' #}
+        {# <link rel="stylesheet" href="https://use.typekit.net/cwk5ymc.css" /> #}
+
+        {# Font Adobe Acumin 'ybu0qig' #}
+        <link rel="stylesheet" href="https://use.typekit.net/ybu0qig.css" />
+
+        {# using CSS preprocessor Sass now #}
+        {{ encore_entry_link_tags('app') }}
+        {#
+        <script src="{{ asset('build/app.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}" />
+        #}
+       
+      {% endblock %} {# of stylesheets #}
+
+      {############################################################################}
+      {# javascripts                                                              #}
+      {############################################################################}
+        {#
+      {% block javascripts %}
+          <script src="{{ asset('js/jquery-2.1.3.min.js') }}"></script>
+        #}
+
+          {### not sure, what script.js is good for #}
+          {# <script src="script.js"></script> #}
+
+        {#
+          <script src="{{ asset('js/zebratable.js') }}"></script>
+      {% endblock %} {# of javascripts #}
+
+      {############################################################################}
+
+      {# <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> #}
+    {% endblock %} {# of head #}
+  </head>
+
+  {################################################################################}
+  {#                                                                              #}
+  {# body                                                                         #}
+  {#                                                                              #}
+  {################################################################################}
+  <body>
+    {% block body %}
+
+    {##############################################################################}
+    {#                                                                            #}
+    {# div wrapper                                                                #}
+    {#                                                                            #}
+    {##############################################################################}
+    <div id="wrapper">
+
+      {############################################################################}
+      {#                                                                          #}
+      {# div header                                                               #}
+      {#                                                                          #}
+      {############################################################################}
+      <div id="header">
+        {% block header %}
+
+          <div id='screenonly'>
+            <table width="1220px"><tr>
+              <td width='400px' align="left" ><b>Strategic Bets: Monolith to Microservices</b></td>
+        {#
+              <td align="center" ><b> {{ app.session.get ('company') }} </b></td>
+              <td width='400px' align="right" ><b>Welcome {{ app.session.get('username') }} </b></td>
+            </tr><tr>
+              <td width='400px' align="left"> <b> {{ date().format('D j M Y H:i T') }} </b></td>
+              <td align="center" ><b></b></td>
+              <td width='400px' align="right" ><b>Project: {{ app.session.get ('projlong') }} </b></td>
+        #}
+            </tr></table>
+          </div>
+
+        {% endblock %} {# of header #}
+      </div> {# of header #}
+
+      {############################################################################}
+      {#                                                                          #}
+      {# div cssmenu                                                              #}
+      {#                                                                          #}
+      {############################################################################}
+      <div id="cssmenu">
+        {% block cssmenu %}
+
+{#
+          {{ knp_menu_render ('mainMenu') }} 
+#}
+
+        {% endblock %} {# of cssmenu #}
+      </div> {# of cssmenu #}
+
+      {############################################################################}
+      {#                                                                          #}
+      {# div contentbody                                                          #}
+      {#                                                                          #}
+      {############################################################################}
+      <div id="contentbody">
+        {% block contentbody %}
+        {% endblock %} {# of contentbody #}
+      </div> {# of contentbody #}
+
+    </div> {# of wrapper #}
+
+    {##############################################################################}
+    {#                                                                            #}
+    {# div kicker                                                                 #}
+    {#                                                                            #}
+    {##############################################################################}
+    <div id="kicker">
+      {% block kicker %}
+
+      {#
+        {% if app.session.get ('kickertype') == "error" %}
+          <p class='kickererror'>
+        {% else %}
+          <p class='kickerinfo'>
+        {% endif %}
+
+      #}
+        {# <?php echo $_SESSION['kicker']; ?> #}
+      {#
+        {{ app.session.get('kicker') }}
+      #}
+      </p>
+
+      {% endblock %} {# of kicker #}
+    </div> {# of kicker #}
+
+    {##############################################################################}
+    {#                                                                            #}
+    {# div footer                                                                 #}
+    {#                                                                            #}
+    {##############################################################################}
+    <div id="footer">
+      {% block footer %}
+        <div id='screenonly'>
+          &copy; T-Systems International GmbH 2021
+        </div>
+      {% endblock %} {# of footer #}
+    </div> {# of footer #}
+
+      {############################################################################}
+      {# javascripts                                                              #}
+      {############################################################################}
+      {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+          <script src="{{ asset('js/jquery-2.1.3.min.js') }}"></script>
+
+          {### not sure, what script.js is good for #}
+          {# <script src="script.js"></script> #}
+
+          <script src="{{ asset('js/zebratable.js') }}"></script>
+      {% endblock %} {# of javascripts #}
+
+    {% endblock %} {# of body #}
+  </body>
+
+</html>

@@ -1,0 +1,43 @@
+/* ******************************************************************************* */
+/* ***                                                                         *** */
+/* *** colors.css                               (c) Wolfram Plettscher 10/2019 *** */
+/* ***                                                                         *** */
+/* ******************************************************************************* */
+
+:root {
+
+  /* *** General Colors ********************************************************** */
+  --background:          #ffffff; /* white */
+
+  /* *** Menu Colors ************************************************************* */
+  --highlight:           #516eb1; /* light blue */
+  --highlight_text:      #ffffff; /* white */
+  --highlight_hover:     #ffffff; /* white */
+  --highlight_top:       #a6afd6; /* light light blue */
+  --highlight_bottom:    #2b1684; /* dark blue */
+  --dropdown_background: #e0e0e0; /* light grey */
+  --dropdown_hover:      #949494; /* grey */
+  --menutext:            #666666; /* grey */
+  --menutext_hover:      #000000; /* black */
+  --menubar1:            #cdcdcd; /* light grey */
+  --menubar2:            #e2e2e2; /* light grey */
+  --menubar_top1:        #e9e9e9; /* light grey */
+  --menubar_top2:        #a8a8a8; /* light grey */
+  --greybutton:          #a8a8a8; /* light grey */
+
+/*  --color1:              #8e8e8e; /* dark grey */
+  --color1:              #ff0000; /* dark grey */
+
+  /* *** Text Colors ************************************************************* */
+  --text_regular:        #000000; /* black */
+  --text_highlight:      #516eb1; /* light blue */
+  --text_kicker:         #a80329; /* red */
+  --sqleven:             #ffffff; /* white */
+  --sqlodd:              #e1e2e6;
+  --input_background:    #e1e2e6;
+
+  /* *** Attention Colors********************************************************* */
+  --red1:                #a80329; /* red */
+  --red2:                #ff0000; /* red */
+}
+

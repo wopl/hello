@@ -1,0 +1,179 @@
+/* ******************************************************************************* */
+/* ***                                                                         *** */
+/* *** stdbutton.scss                           (c) Wolfram Plettscher 08/2020 *** */
+/* ***                                                                         *** */
+/* ******************************************************************************* */
+
+/* ******************************************************************************* */
+/* * screen                                                                      * */
+/* ******************************************************************************* */
+@media screen {
+
+  /* ***************************************************************************** */
+  %base-font {
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    font-size: $font-size-regular;
+  }
+
+  /* ***************************************************************************** */
+  %base-button {
+    @extend %base-font;
+    text-decoration : none;
+    text-align: left;
+    border-style: none;
+    border-radius: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  /* ***************************************************************************** */
+  .css_btn_class {
+    @extend %base-button;
+    background: var(--highlight);
+    color: var(--highlight_text);
+
+    &:hover {
+      background: var(--highlight_bottom);
+    }
+
+    &:active {
+      position:relative;
+      top:1px;
+    }
+  }
+
+  /* ***************************************************************************** */
+  .css_redbtn_class {
+    @extend %base-button;
+    background: var(--red1);
+    color: var(--highlight_text);
+
+    &:hover {
+      background: var(--red2);
+    }
+
+    &:active {
+      position:relative;
+      top:1px;
+    }
+  }
+  
+  /* ***************************************************************************** */
+  .css_greybtn_class {
+    @extend %base-button;
+    background: var(--greybutton);
+    color: var(--highlight_text);
+  }
+
+  /* ***************************************************************************** */
+  .mini_btn1 {
+    @extend %base-button;
+    background: var(--highlight);
+    color: var(--highlight_text);
+
+    &:hover {
+      background: var(--highlight_bottom);
+    }
+  }
+
+  /* ***************************************************************************** */
+  .mini_btn2 {
+    @extend %base-button;
+    background: var(--highlight_top);
+    color: var(--highlight_text);
+
+    &:hover {
+      background: var(--highlight_bottom);
+    }
+  }
+
+  /* ***************************************************************************** */
+  .mini_btn3 {
+    @extend %base-button;
+    background: var(--highlight);
+    color: var(--highlight_text);
+    /*    background: var(--dropdown_background);  */
+    /*    color: var(--highlight_text); */
+
+    &:hover {
+      background: var(--highlight_bottom);
+    }
+  }
+
+  //****************************************************************************
+  //*** Radio buttons                                                        ***
+  //****************************************************************************
+  .myradio {
+    background: #ff0000;
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    &:hover input ~ .checkmark {
+      border: 2px solid var(--red1);
+    }
+
+    input:checked ~ .checkmark {
+      background: var(--highlight);
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  //****************************************************************************
+  .checkmark {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 8px;
+    width: 8px;
+    background: var(--input_background);
+    border: 2px solid var(--highlight);
+    border-radius: 50%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+} /* end of media screen */
+
+/* ******************************************************************************* */
+/* * print                                                                       * */
+/* ******************************************************************************* */
+@media print
+{
+  /* *** do not print any buttons ************************************************ */
+  .css_btn_class {
+    display: none;
+  }
+
+  .css_greybtn_class {
+    display: none;
+  }
+
+  .css_redbtn_class {
+    display: none;
+  }
+}

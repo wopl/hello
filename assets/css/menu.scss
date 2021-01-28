@@ -1,0 +1,212 @@
+//******************************************************************************
+//***                                                                        ***
+//*** menu.scss                               (c) Wolfram Plettscher 08/2020 ***
+//***                                                                        ***
+//******************************************************************************
+
+//******************************************************************************
+//* Variables                                                                  *
+//******************************************************************************
+$font-size-menu: 14px;
+
+//******************************************************************************
+//* Screen                                                                     *
+//******************************************************************************
+@media screen
+{
+//  %base-font {
+//    font-family: $font-family;
+//    font-weight: $font-weight-regular;
+//    font-style: normal;
+//    font-size: $font-size-regular;
+//  }
+
+  //****************************************************************************
+  #cssmenu {
+//    @extend %base-font;
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    font-size: $font-size-menu;
+    border: none;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    color: var(--color1);
+    width: auto;
+
+    // #cssmenu p **************************************************************
+    p {
+      clear: left;
+    }
+
+    // #cssmenu > ul ***********************************************************
+    > ul {
+      margin-top: 6px !important;
+    }
+
+    // #cssmenu ul *************************************************************
+    ul {
+      background: var(--menubar1);
+      background: -webkit-linear-gradient(var(--menubar1) 0%, var(--menubar2) 80%, var(--menubar1) 100%);
+      background: linear-gradient(var(--menubar1) 0%, var(--menubar2) 80%, var(--menubar1) 100%);
+      border-top: 1px solid var(--menubar_top2);
+      -webkit-box-shadow: inset 0 1px 0 var(--menubar_top1), 0 1px 0 var(--highlight), 0 2px 0 var(--highlight_top), 0 8px 0 var(--highlight), 0 9px 0 var(--highlight_bottom), 0 -1px 1px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 0 1px 0 var(--menubar_top1), 0 1px 0 var(--highlight), 0 2px 0 var(--highlight_top), 0 8px 0 var(--highlight), 0 9px 0 var(--highlight_bottom), 0 -1px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 1px 0 var(--menubar_top1), 0 1px 0 var(--highlight), 0 2px 0 var(--highlight_top), 0 8px 0 var(--highlight), 0 9px 0 var(--highlight_bottom), 0 -1px 1px rgba(0, 0, 0, 0.1);
+      height: 27px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      // #cssmenu ul ul ********************************************************
+      ul {
+        border-top: 6px solid var(--highlight);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+        // #cssmenu ul ul a ****************************************************
+        a {
+          line-height: 30px;
+        }
+
+        // #cssmenu ul ul ul ***************************************************
+        ul {
+          left: 100%;
+          top: 0;
+        }
+      }
+    }
+
+    // #cssmenu li *************************************************************
+    li {
+      float: left;
+      padding: 0px 8px 0px 8px;
+
+      // #cssmenu li:hover *****************************************************
+      &:hover {
+
+        // #cssmenu li:hover > ul **********************************************
+        > ul {
+          display: block;
+        }
+      }
+
+      // #cssmenu li a *********************************************************
+      a ,
+      // #cssmenu li span ******************************************************
+      span {
+        color: var(--menutext);
+        display: block;
+        font-weight: bold;
+        line-height: 30px;
+        padding: 0px 25px;
+        text-align: center;
+        text-decoration: none;
+
+        // #cssmenu li a:hover *************************************************
+        // #cssmenu li span:hover **********************************************
+        &:hover {
+          color: var(--menutext_hover);
+          text-decoration: none;
+        }
+      }
+
+      // #cssmenu li li ********************************************************
+      li {
+        display: block;
+        float: none;
+        padding: 0px;
+        position: relative;
+        width: 225px;
+      }
+
+      // #cssmenu li span ******************************************************
+//    span {
+//      color: var(--menutext);
+//      display: block;
+//      font-weight: bold;
+//      line-height: 30px;
+//      padding: 0px 25px;
+//      text-align: center;
+//      text-decoration: none;
+
+        // #cssmenu li span:hover **********************************************
+//      &:hover {
+//        color: var(--menutext_hover);
+//        text-decoration: none;
+//      }
+//    }
+
+      // #cssmenu li ul ********************************************************
+      ul {
+        background: var(--dropdown_background);
+        border-left: 2px solid var(--highlight);
+        border-right: 2px solid var(--highlight);
+        border-bottom: 2px solid var(--highlight);
+        display: none;
+        height: auto;
+        filter: alpha(opacity=95);
+        opacity: 0.95;
+        position: absolute;
+        width: 225px;
+        z-index: 200;
+        // top:1em;
+        // left:0;
+
+        // #cssmenu li ul a ****************************************************
+        a {
+          display: block;
+//          font-size: 14px;
+//          font-style: normal;
+          padding: 0px 10px 0px 15px;
+          text-align: left;
+
+          // #cssmenu li ul a:hover ********************************************
+          &:hover {
+            background: var(--dropdown_hover);
+            color: var(--menutext_hover);
+            opacity: 1.0;
+            filter: alpha(opacity=100);
+          }
+        }
+      }
+    }
+
+    // #cssmenu .current *******************************************************
+    .current {
+
+      // #cssmenu .current > a *************************************************
+      > a ,
+      // #cssmenu .current > span **********************************************
+      > span {
+        background: var(--highlight);
+        -webkit-box-shadow: 0 -4px 0 var(--highlight), 0 -5px 0 var(--highlight_top), 0 -6px 0 var(--highlight);
+        -moz-box-shadow: 0 -4px 0 var(--highlight), 0 -5px 0 var(--highlight_top), 0 -6px 0 var(--highlight);
+        box-shadow: 0 -4px 0 var(--highlight), 0 -5px 0 var(--highlight_top), 0 -6px 0 var(--highlight);
+        color: var(--highlight_text);
+
+        // #cssmenu .current > a:hover *****************************************
+        &:hover {
+          color: var(--highlight_hover);
+        }
+      }
+    }
+  } // of #cssmenu
+}
+
+//******************************************************************************
+//* Print                                                                      *
+//******************************************************************************
+@media print
+{
+  // don't print id 'cssmenu'
+  #cssmenu {
+    display: none;
+
+    > ul {
+      display: none;
+    }
+  }
+}

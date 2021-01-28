@@ -1,0 +1,113 @@
+//******************************************************************************
+//***                                                                        ***
+//*** modal.scss                              (c) Wolfram Plettscher 08/2020 ***
+//***                                                                        ***
+//******************************************************************************
+
+.modalDialog {
+  @extend  %base-font;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+  left: 0;
+  // Background of the main window
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 300ms ease-in;
+	-moz-transition: opacity 300ms ease-in;
+	transition: opacity 300ms ease-in;
+	pointer-events: none;
+/*     margin-top: 6px !important; */
+
+  // .modalDialog:target *******************************************************
+  &:target {
+	  opacity:1;
+	  pointer-events: auto;
+  }
+
+  // .modalDialog > div ********************************************************
+  // all background (frame) of modal window
+  > div {
+    width: 700px;
+    position: relative;
+    margin: 10% auto;
+    background: var(--menubar_top1);
+    //padding: 0px 0px 0px 0px;
+
+    // keep for illustration only
+  	// padding: 5px 20px 13px 20px;
+    // border-radius: 8px; 
+    // background-image: linear-gradient(to top, red, yellow);
+
+    // .modalDialog > div ul ***************************************************
+    ul { 
+      padding: 6px 0px 0px 6px;
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--menutext);
+      // background of header
+      background: var(--menubar1);
+      background: -webkit-linear-gradient(var(--menubar1) 0%, var(--menubar2) 80%, var(--menubar1) 100%);
+      background: linear-gradient(var(--menubar1) 0%, var(--menubar2) 80%, var(--menubar1) 100%);
+      border-top: 1px solid var(--menubar_top2);
+      -webkit-box-shadow: inset 0 1px 0 var(--menubar_top1), 0 1px 0 var(--highlight), 0 2px 0 var(--highlight_top), 0 8px 0 var(--highlight), 0 9px 0 var(--highlight_bottom), 0 -1px 1px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 0 1px 0 var(--menubar_top1), 0 1px 0 var(--highlight), 0 2px 0 var(--highlight_top), 0 8px 0 var(--highlight), 0 9px 0 var(--highlight_bottom), 0 -1px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 1px 0 var(--menubar_top1), 0 1px 0 var(--highlight), 0 2px 0 var(--highlight_top), 0 8px 0 var(--highlight), 0 9px 0 var(--highlight_bottom), 0 -1px 1px rgba(0, 0, 0, 0.1);
+      height: 27px;
+      // list-style: none; 
+    }    
+
+    // .modalDialog > div div **************************************************
+    div {
+      padding: 6px 6px 6px 6px;
+      // background of modal window main area
+      background: var(--background);
+    }    
+  }
+}
+
+// .close **********************************************************************
+.close {
+  background: var(--highlight);
+  color: var(--highlight_text);
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  // Shadow of close button
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+
+  // .close:hover **************************************************************
+  &:hover {
+    // color of close button
+    background: var(--highlight_bottom);
+  }
+
+}
+
+// .modalkicker ****************************************************************
+.modalkicker {
+  @extend %base-font;
+  font-weight: $font-weight-bold;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	height: 10px;
+	text-align: left;
+	padding: 0px 0px 5px 0px;
+	background-color: var(--input_background);
+	color: var(--text_kicker);
+}
+
+

@@ -1,0 +1,130 @@
+//******************************************************************************
+//***                                                                        ***
+//*** app.scss                                (c) Wolfram Plettscher 08/2020 ***
+//***                                                                        ***
+//******************************************************************************
+
+@charset "utf-8";
+@import 'colors.css';
+
+//******************************************************************************
+//* Variables                                                                  *
+//******************************************************************************
+$screen-width: 1220px;
+$font-family: acumin-pro, sans-serif;
+$font-size-regular: 12.5px;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+//******************************************************************************
+//* Screen                                                                     *
+//******************************************************************************
+@media screen
+{
+//  %base-font {
+//    font-family: $font-family;
+//    font-weight: $font-weight-regular;
+//    font-style: normal;
+//    font-size: $font-size-regular;
+//  }
+
+  //****************************************************************************
+  body {
+    font-family: $font-family;
+    font-size: $font-size-regular;
+  }
+
+  //****************************************************************************
+  h1 {
+//    @extend %base-font;
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    color: var(--text_highlight);
+    font-size: 16px;
+  }
+
+  //****************************************************************************
+  h2 {
+//    @extend %base-font;
+    font-weight: $font-weight-bold;
+    color: var(--text_highlight);
+    font-size: 14px;
+  }
+
+  //****************************************************************************
+  h3 {
+//    @extend %base-font;
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    color: var(--text_highlight);
+    font-size: 14px;
+  }
+
+  //****************************************************************************
+  b {
+//    font-family: $font-family;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-regular;
+    color: var(--text_highlight);
+  }
+
+  //****************************************************************************
+  /*
+td {
+  font-size: 12;
+}
+*/
+
+  //****************************************************************************
+  input {
+    @extend %base-font;
+    background-color: var(--input_background);
+    border-style: inset;
+    border-color: var(--background);
+  }
+  //****************************************************************************
+  .selectbox {
+    @extend %base-font;
+    background: var(--input_background);
+    color: var(--text_regular);
+    text-align: left;
+    border-style: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    -webkit-box-shadow: -1px -1px var(--dropdown_hover);
+    -moz-box-shadow: -1px -1px var(--dropdown_hover);
+    box-shadow: -1px -1px var(--dropdown_hover);
+  }
+  
+  //****************************************************************************
+  .datetime {
+    select {
+      @extend %base-font;
+      background: var(--input_background);
+      color: var(--text_regular);
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+
+}
+
+//******************************************************************************
+//* Print                                                                      *
+//******************************************************************************
+@media print
+{
+  /* exclude id 'screenonly' from being printed */
+  #screenonly {
+    display: none;
+  }
+}
+
+//******************************************************************************
+//* Imports                                                                    *
+//******************************************************************************
+@import 'frames.scss';
+@import 'menu.scss';
+@import 'table.scss';
+@import 'button.scss';
+@import 'modal.scss';

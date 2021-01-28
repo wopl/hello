@@ -1,0 +1,146 @@
+//******************************************************************************
+//***                                                                        ***
+//*** table.scss                              (c) Wolfram Plettscher 09/2020 ***
+//***                                                                        ***
+//******************************************************************************
+
+//******************************************************************************
+%base-sqltable {
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-size: $font-size-regular;
+  text-align: left;
+  vertical-align: middle;
+}
+
+//******************************************************************************
+%table-padding {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+//******************************************************************************
+.sqltable {
+  @extend %base-sqltable;
+  @extend %table-padding;
+
+  th {
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    padding-bottom: 4px;
+  }
+
+  td {
+    @extend %table-padding;
+  }
+
+  .sqltableeven {
+    background-color: var(--sqleven);
+    color: var(--text_regular);
+
+    .mmini_btn3 {
+	    background-color: var(--sqlodd);
+    }
+  }
+
+  .sqltableodd {
+    background-color: var(--sqlodd);
+    color: var(--text_regular);
+
+    .mmini_btn3 {
+	    background-color: var(--sqleven);
+    }
+  }
+}
+
+//******************************************************************************
+.sqltableone {
+//  @extend %base-sqltable;
+  color: var(--highlight_text);
+  background: var(--highlight);
+  vertical-align: middle;
+  -webkit-box-shadow: 0 0px 0 var(--highlight), 0 -1px 0 var(--highlight_top), 0 -2px 0 var(--highlight);
+  -moz-box-shadow: 0 0px 0 var(--highlight), 0 -1px 0 var(--highlight_top), 0 -2px 0 var(--highlight);
+  box-shadow: 0 0px 0 var(--highlight), 0 -1px 0 var(--highlight_top), 0 -2px 0 var(--highlight);
+
+  th {
+    @extend %table-padding;
+  }
+
+  td {
+    @extend %table-padding;
+  }
+}
+// :window-inactive ???
+
+////******************************************************************************
+//.sqltableeven {
+////  @extend %base-sqltable;
+//  vertical-align: top;
+//  background-color: var(--sqleven);
+//  color: var(--text_regular);
+//
+//  th {
+//    @extend %table-padding;
+//  }
+//
+//  td {
+//    @extend %table-padding;
+//  }
+//
+//  .mmini_btn3 {
+//	  background-color: var(--sqlodd);
+//  }
+//}
+
+//******************************************************************************
+//.sqltableodd {
+////  @extend %base-sqltable;
+//  vertical-align: top;
+//  background-color: var(--sqlodd);
+//  color: var(--text_regular);
+//
+//  th {
+//    @extend %table-padding;
+//  }
+//
+//  td {
+//    @extend %table-padding;
+//  }
+//
+//  .mmini_btn3 {
+//	  background-color: var(--sqleven);
+//  }
+//}
+
+//******************************************************************************
+.sqltable_red {
+  color: var(--red1);
+  font-weight: $font-weight-bold;
+}
+
+//******************************************************************************
+.inputtable {
+  th {
+    @extend %table-padding;
+    background: var(--highlight);
+    -webkit-box-shadow: 0 0px 0 var(--highlight), 0 -1px 0 var(--highlight_top), 0 -2px 0 var(--highlight);
+    -moz-box-shadow: 0 0px 0 var(--highlight), 0 -1px 0 var(--highlight_top), 0 -2px 0 var(--highlight);
+    box-shadow: 0 0px 0 var(--highlight), 0 -1px 0 var(--highlight_top), 0 -2px 0 var(--highlight);
+    color: var(--highlight_text);
+    text-align: left;
+    vertical-align: middle;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-regular; 
+  }
+
+  td {
+    @extend %table-padding;
+    background: var(--sqleven);
+    color: var(--text_regular);
+  }
+}
+
