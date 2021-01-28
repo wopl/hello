@@ -1,6 +1,6 @@
 /* ******************************************************************************* */
 /* ***                                                                         *** */
-/* *** colors.css                               (c) Wolfram Plettscher 10/2019 *** */
+/* *** colors.css                               (c) Wolfram Plettscher 01/2021 *** */
 /* ***                                                                         *** */
 /* ******************************************************************************* */
 
@@ -13,11 +13,14 @@
   --background:          #ffffff; /* white */
 
   /* *** Menu Colors ************************************************************* */
-  --highlight:           #516eb1; /* light blue */
+  /*--highlight:           #516eb1; /* light blue */
+  --highlight:           #e20074; /* T-Systems Magenta */
   --highlight_text:      #ffffff; /* white */
   --highlight_hover:     #ffffff; /* white */
-  --highlight_top:       #a6afd6; /* light light blue */
-  --highlight_bottom:    #2b1684; /* dark blue */
+  /*--highlight_top:       #a6afd6; /* light light blue */
+  --highlight_top:       #e3ccd8; /* light light magenta */
+  /*--highlight_bottom:    #2b1684; /* dark blue */
+  --highlight_bottom:    #a40054; /* dark magenta */
   --dropdown_background: #e0e0e0; /* light grey */
   --dropdown_hover:      #949494; /* grey */
   --menutext:            #666666; /* grey */
@@ -33,8 +36,10 @@
 
   /* *** Text Colors ************************************************************* */
   --text_regular:        #000000; /* black */
-  --text_highlight:      #516eb1; /* light blue */
-  --text_kicker:         #a80329; /* red */
+  /*--text_highlight:      #516eb1; /* light blue */
+  --text_highlight:      #e20074; /* T-Systems Magenta */
+  /*--text_kicker:         #a80329; /* red */
+  --text_kicker:         #d90000; /* T-Systems red */
   --sqleven:             #ffffff; /* white */
   --sqlodd:              #e1e2e6;
   --input_background:    #e1e2e6;
