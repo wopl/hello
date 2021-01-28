@@ -13,6 +13,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Entity\Mainform;
+use App\Form\MainFormType;
+
 // **********************************************************************************
 // **                                                                              **
 // ** class: HelloController                                                       **
@@ -66,7 +69,17 @@ class HelloController extends AbstractController
    */
   public function gui(): Response
   {
-    return $this->render ('guimain.html.twig');
+    $mainform = new Mainform();
+//    $form = $this->createForm (MainFormType::class, $mainform, $options);
+    $form = $this->createForm (MainFormType::class, $mainform);
+
+    $render = $this->render (
+      'guimain.html.twig',
+      array ('form' => $form->createView())
+      );
+    return ($render);;
+
+//    return $this->render ('guimain.html.twig');
   }
 
   // ********************************************************************************
