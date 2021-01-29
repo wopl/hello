@@ -67,8 +67,9 @@ class HelloController extends AbstractController
    */
   public function hello2(): Response
   {
+    $str = file_get_contents ($this->filename);
     $data = [
-      'String' => "This is method hello2 of M2M Hello Microservice",
+      'String' => $str,
     ];
     return new JsonResponse ($data, Response::HTTP_OK);
 
