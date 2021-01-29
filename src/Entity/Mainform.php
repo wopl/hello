@@ -1,7 +1,7 @@
 <?php
 // **********************************************************************************
 // **                                                                              **
-// ** Mainform.php                                  (c) Wolfram Plettscher 04/2018 **
+// ** Mainform.php                                  (c) Wolfram Plettscher 01/2021 **
 // **                                                                              **
 // **********************************************************************************
 namespace App\Entity;
@@ -24,162 +24,36 @@ class Mainform
   /**
    * @Assert\NotBlank()
    */
-  protected $travel_uuid;
-  protected $date_start;
-  protected $time_start;
-  protected $km_start;
-  protected $date_end;
-  protected $time_end;
-  protected $km_end;
-  protected $distance;
-  protected $route;
-  protected $purpose;
+  protected $string;
+  protected $oldstring;
 
   // ********************************************************************************
   // **                                                                            **
-  // ** functions: getTravelUuid / setTravelUuid                                   **
+  // ** functions: getString / setString                                           **
   // **                                                                            **
   // ********************************************************************************
-  public function getTravelUuid ()
+  public function getString ()
   {
-    return $this->travel_uuid;
+    return $this->string;
   }
 
-  public function setTravelUuid ($travel_uuid)
+  public function setString ($string)
   {
-    $this->travel_uuid = $travel_uuid;
+    $this->string = $string;
   }
 
   // ********************************************************************************
   // **                                                                            **
-  // ** functions: getDateStart / setDateStart                                     **
+  // ** functions: getOldstring / setOldstring                                     **
   // **                                                                            **
   // ********************************************************************************
-  public function getDateStart ()
+  public function getOldstring ()
   {
-    return $this->date_start;
+    return $this->oldstring;
   }
 
-  public function setDateStart ($date_start)
+  public function setOldstring ($myoldstring)
   {
-    $this->date_start = $date_start;
+    $this->oldstring = $myoldstring;
   }
-
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getTimeStart / setTimeStart                                     **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getTimeStart ()
-  {
-    return $this->time_start;
-  }
-
-  public function setTimeStart ($time_start)
-  {
-    $this->time_start = $time_start;
-  }
-   
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getKmStart / setKmStart                                         **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getKmStart ()
-  {
-    return $this->km_start;
-  }
-
-  public function setKmStart ($km_start)
-  {
-    $this->km_start = $km_start;
-  }
-   
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getDateEnd / setDateEnd                                         **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getDateEnd ()
-  {
-    return $this->date_end;
-  }
-
-  public function setDateEnd ($date_end)
-  {
-    $this->date_end = $date_end;
-  }
-
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getTimeEnd / setTimeEnd                                         **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getTimeEnd ()
-  {
-    return $this->time_end;
-  }
-
-  public function setTimeEnd ($time_end)
-  {
-    $this->time_end = $time_end;
-  }
-   
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getKmEnd / setKmEnd                                             **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getKmEnd ()
-  {
-    return $this->km_end;
-  }
-
-  public function setKmEnd ($km_end)
-  {
-    $this->km_end = $km_end;
-  }
-   
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getRoute / setRoute                                             **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getRoute ()
-  {
-    return $this->route;
-  }
-
-  public function setRoute ($route)
-  {
-    $this->route = $route;
-  }
-   
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getPurpose / setPurpose                                         **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getPurpose ()
-  {
-    return $this->purpose;
-  }
-
-  public function setPurpose ($purpose)
-  {
-    $this->purpose = $purpose;
-  }
-   
-  // ********************************************************************************
-  // **                                                                            **
-  // ** functions: getDistance                                                     **
-  // **                                                                            **
-  // ********************************************************************************
-  public function getDistance ()
-  {
-    return ($this->km_end - $this->km_start);
-  }
-
-  public function setDistance ($distance) {}
-
-} // Mainform
+}

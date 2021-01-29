@@ -14,12 +14,22 @@
 
 <h1>Microservice replacing Monolith functionality (demonstration)</h1>
 <h3>Return input String back to Lambda-Agent ... and finally into Monolith</h3>
-https://ms1.tsys.koeln or temporarily http://m2m.tsys.koeln/gui <br>
+https://ms1.tsys.koeln or temporarily http://m2m.tsys.koeln/gui </br></br>
+
+{{ form_start (form) }}
 
 <table>
   <tr>
+    <td> Saved String: </td>
+    <td> <b>{{ form.oldstring.vars.value }}</b> </td>
+  </tr><tr>
+    <td> Enter new String: </td>
+    <td> {{ form_widget (form.string) }} </td>
     <td> {{ form_widget (form.submit, {'attr': {'class': 'css_btn_class'}}) }} </td>
   </tr>
 </table>
+</br>
+
+{{ form_end (form) }}
 
 {% endblock %} {# of contentbody #}

@@ -1,7 +1,7 @@
 <?php
 // **********************************************************************************
 // **                                                                              **
-// ** HelloController.php                           (c) Wolfram Plettscher 11/2020 **
+// ** HelloController.php                           (c) Wolfram Plettscher 01/2021 **
 // **                                                                              **
 // **********************************************************************************
 
@@ -23,6 +23,21 @@ use App\Form\MainFormType;
 // **********************************************************************************
 class HelloController extends AbstractController
 {
+  // ******************************************************************************** 
+  // *** define all database/form fields
+  protected $filename = 'stringbuffer.txt';
+
+  // ********************************************************************************
+  // **                                                                            **
+  // ** function: __construct                                                      **
+  // **                                                                            **
+  // ********************************************************************************
+  public function __construct ()
+  {
+    if (! file_exists ($this->filename)) {
+      file_put_contents ($this->filename, 'initial value');
+    }
+  }
 
   // ********************************************************************************
   // **                                                                            **
@@ -65,19 +80,52 @@ class HelloController extends AbstractController
   // **                                                                            **
   // ********************************************************************************
   /** 
-   * @Route ("/gui", name="gui", methods={"GET"})
+   * @Route ("/gui", name="gui", methods={"GET","POST"})
    */
-  public function gui(): Response
+  public function gui(Request $request): Response
   {
-    $mainform = new Mainform();
-//    $form = $this->createForm (MainFormType::class, $mainform, $options);
-    $form = $this->createForm (MainFormType::class, $mainform);
+    $mainform_entity = new Mainform;
+
+    $str = file_get_contents ($this->filename);
+    $mainform_entity->setOldstring ($str);
+
+    $form = $this->createForm (MainFormType::class, $mainform_entity);
+
+//    if ($request->isMethod('POST')) {
+//      file_put_contents ($this->filename, 'POST');
+    
+    // ******************************************************************************
+    // *** handle all form submission here
+    $form->handleRequest ($request);
+//      file_put_contents ($this->filename, 'handle');
+    
+    if ($form->isSubmitted() && $form->isValid())
+    {
+      file_put_contents ($this->filename, 'valid');
+      $clicked = $form->getClickedButton()->getName();
+      switch ($clicked) {
+    
+      // *** handle 'submit' ********************************************************
+        case "submit":
+          $formdata = $form->getdata();
+          $oldstring = $formdata->getString();
+          file_put_contents ($this->filename, $oldstring);
+          break;
+
+      }
+  
+      return $this->redirectToRoute ('gui');
+//    } else {
+//      if ($editfields_uuid == '') {
+//        $session->set ('kicker', '');
+//      }
+    }
 
     $render = $this->render (
       'guimain.html.twig',
       array ('form' => $form->createView())
       );
-    return ($render);;
+    return ($render);
 
 //    return $this->render ('guimain.html.twig');
   }
